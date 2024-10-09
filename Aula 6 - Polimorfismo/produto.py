@@ -1,0 +1,22 @@
+class Produto:
+    def __init__(self, nome, preco):
+        self._nome = nome
+        self._preco = preco
+
+    def descrever(self):
+        print(f"O produto{self._nome} custa R$ {self._preco}.")
+
+    def calcularDesconto(self,valor):
+        print(f"O desconto não será aplicado aqui.")   
+
+class Eletronico(Produto):
+    def __init__(self, nome, preco, voltagem):
+        super().__init__(nome, preco)
+        self._voltagem = voltagem
+
+    def descrever(self):
+        print(f"O Elêtronico {self._nome} custa R$ {self._preco} e possui a voltagem {self._voltagem}") 
+
+    def calcularDesconto(self, valor):
+        desconto = valor/100
+        print(f"O produto eletrônico {self._nome} terá um desconto de {desconto}%.")
